@@ -1,0 +1,26 @@
+button {
+   	font-family: "Raleway Dots", sans-serif;
+    width: 200px;
+    height: 40px;
+    position: absolute;
+    bottom: 50%;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 18px;
+    color: #fff;
+    background-color: #7B5562;
+    left: 50%;
+    user-select: none;
+    -moz-user-select: none;
+    z-index: 1;
+}
+
+button:hover {
+    color: #7B5562;
+    background-color: #fff;
+}
+
+
+#skip-button {
+    transform: translate(-100px, 220px);
+}
