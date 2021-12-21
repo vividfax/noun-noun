@@ -16,6 +16,7 @@ function setup() {
     textAlign(CENTER, CENTER);
     rectMode(CENTER);
 
+    compoundNouns.pop();
     compoundNouns = shuffle(compoundNouns);
     getNouns();
 
@@ -38,6 +39,8 @@ function draw() {
     rect(0, 90, 1000, 110, 5);
     fill("#fff");
     text(nouns, 0, -120);
+    textSize(50);
+    text("means", 0, -20);
     textSize(70);
 
     if (guess.length > 0) {
@@ -45,7 +48,7 @@ function draw() {
         text(guess, 0, 90);
     } else if (index == 0) {
         fill(255, 255, 255, 100);
-        text("Press enter to submit answer", 0, 90);
+        text("", 0, 90);
     }
 
     pop();
@@ -62,12 +65,10 @@ function keyPressed() {
         guess = guess.slice(0, -1);
     }
 
-    if (keyCode == 13) {
-        if (guess == answer) {
-            index++;
-            getNouns();
-            guess = "";
-        }
+    if (guess == answer) {
+        index++;
+        getNouns();
+        guess = "";
     }
 
     draw();

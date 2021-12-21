@@ -1,4 +1,4 @@
-blindfold=eye bandage
+blindfold=eye blanket
 fridge=cool cupboard
 glove=hand shoe
 season=year time
@@ -32,3 +32,7 @@ jeans=cowboy pants
 mermaid=foam girl
 tie=larynx loincloth
 bagpipes=yodel sack
+graffiti=building tattoo
+bubble=bath fluff
+icecube=water bone
+highlighter=text emphasiser
