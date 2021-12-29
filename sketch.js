@@ -59,7 +59,7 @@ function draw() {
     textFont("Raleway Dots");
 
     if (finished) {
-        textSize(140);
+        textSize(100);
         fill("#fff");
         text("Your score is " + score + "/" + index, 0, 0);
         select("#submit-button").hide();
