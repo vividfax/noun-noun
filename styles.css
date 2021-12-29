@@ -15,12 +15,19 @@ button {
     z-index: 1;
 }
 
-button:hover {
-    color: #7B5562;
-    background-color: #fff;
+#submit-button {
+    transform: translate(-100px, 220px);
 }
 
-
 #skip-button {
-    transform: translate(-100px, 220px);
+    border-width: 1px;
+    border-style: solid;
+    border-color: hsl(340, 12%, 52%);
+    background-color: #86626E;
+    transform: translate(-100px, 280px);
+}
+
+button:hover, #skip-button:hover {
+    color: #7B5562;
+    background-color: #fff;
 }
