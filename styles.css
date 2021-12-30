@@ -27,6 +27,10 @@ button {
     transform: translate(-100px, 280px);
 }
 
+#discord-button {
+    transform: translate(-100px, 110px);
+}
+
 button:hover, #skip-button:hover {
     color: #7B5562;
     background-color: #fff;
