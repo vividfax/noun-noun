@@ -83,7 +83,7 @@ function draw() {
     text(nouns, 0, -120);
 
     textSize(50);
-    text("means", 0, -20);
+    text("means", 0, -10);
     textSize(70);
 
     if (guess.length > 0) {

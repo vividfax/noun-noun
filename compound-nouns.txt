@@ -17,7 +17,6 @@ kettle=water cooker
 rhino=nose horn
 hippo=river horse
 diary=day book
-vocabulary=word treasure
 kangaroo=rat pocket
 toe=foot finger
 nipple=breast wart
