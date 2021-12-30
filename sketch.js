@@ -1,7 +1,6 @@
 let compoundNouns
 let answer;
 let nouns;
-let guess = "";
 
 let index = 0;
 
@@ -30,7 +29,17 @@ function setup() {
     getNouns();
 
     select("#submit-button").mousePressed(() => {makeGuess()});
-    select("#skip-button").mousePressed(() => {guess = answer; cheated = true;draw()});
+    select("#skip-button").mousePressed(() => {cheat()});
+
+    document.addEventListener("input", function(e) {
+      var input = this.querySelector("input[name=input-field]");
+      var not = input.value.match(/[^a-z]+/g);
+      if (not) {
+        not.forEach(function(text) {
+          input.value = input.value.replace(text, "")
+        })
+      }
+    })
 
     noLoop();
 }
@@ -50,6 +59,9 @@ function draw() {
         shakeOffsetX = random(-2, 2);
         shakeOffsetY = random(-2, 2);
     }
+
+    select("#input-field").position(width/2 + shakeOffsetX, height/2 + shakeOffsetY);
+
 
     push();
     translate(width/2, height/2)
@@ -74,9 +86,9 @@ function draw() {
         text(score + "/" + index, 0, -250);
     }
 
-    noStroke();
-    fill(255, 255, 255, 30);
-    rect(0, 90, 1000 + shakeOffsetX, 110 + shakeOffsetY, 5);
+    // noStroke();
+    // fill(255, 255, 255, 30);
+    // rect(0 + shakeOffsetX, 90 + shakeOffsetY, 1000, 110, 5);
 
     textSize(140);
     fill("#fff");
@@ -86,27 +98,27 @@ function draw() {
     text("means", 0, -10);
     textSize(70);
 
-    if (guess.length > 0) {
-        fill("#fff");
-        text(guess, 0 + shakeOffsetX, 90 + shakeOffsetY);
-    } else if (index == 0) {
-        fill(255, 255, 255, 100);
-        text("Type your answer", 0 + shakeOffsetX, 90 + shakeOffsetY);
-    }
+    // if (guess.length > 0) {
+    //     fill("#fff");
+    //     text(guess, 0 + shakeOffsetX, 90 + shakeOffsetY);
+    // } else if (index == 0) {
+    //     fill("#300010");
+    //     text("Type your answer", 0 + shakeOffsetX, 90 + shakeOffsetY);
+    // }
 
     pop();
 }
 
 function keyPressed() {
 
-    if (keyCode >= 65 && keyCode <= 90 && guess.length < 15) {
-        guess += key
-        guess = guess.toLowerCase();
-    }
+    // if (keyCode >= 65 && keyCode <= 90 && guess.length < 15) {
+    //     guess += key
+    //     guess = guess.toLowerCase();
+    // }
 
-    if (keyCode == 8) { // keycode equals delete
-        guess = guess.slice(0, -1);
-    }
+    // if (keyCode == 8) { // keycode equals delete
+    //     guess = guess.slice(0, -1);
+    // }
 
     if (keyCode == 13) {
         makeGuess();
@@ -131,7 +143,7 @@ function getNouns() {
 
 function makeGuess() {
 
-    if (guess == answer) {
+    if (select("#input-field").value() == answer) {
         if (!cheated) {
             score++;
         } else {
@@ -139,11 +151,19 @@ function makeGuess() {
         }
         index++;
         getNouns();
-        guess = "";
+        select("#input-field").value("");
+        document.getElementsByName("input-field")[0].placeholder="";
     } else {
         shake = true;
         loop();
     }
 
+    draw();
+}
+
+function cheat() {
+
+    select("#input-field").value(answer);
+    cheated = true;
     draw();
 }

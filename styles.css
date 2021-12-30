@@ -31,3 +31,35 @@ button:hover, #skip-button:hover {
     color: #7B5562;
     background-color: #fff;
 }
+
+#input-field {
+    font-family: "Raleway Dots", sans-serif;
+    width: 1000px;
+    height: 110px;
+    position: absolute;
+    bottom: 50%;
+    border-radius: 5px;
+    border-style: none;
+    font-size: 70px;
+    color: #fff;
+    background-color: #93757F;
+    left: 50%;
+    user-select: none;
+    -moz-user-select: none;
+    z-index: 1;
+    text-align: center;
+    transform: translate(-500px, 35px);
+}
+
+input:focus {
+    outline: none !important;
+    border-color: #fff;
+}
+textarea:focus {
+    outline: none !important;
+    border-color: #fff;
+}
+
+input::placeholder {
+  color: #300010;
+}
