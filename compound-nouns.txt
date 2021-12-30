@@ -30,3 +30,7 @@ graffiti=building tattoo
 bubble=bath fluff
 icecube=water bone
 highlighter=text emphasiser
+fur=dog skin
+fox=crime dog
+sloth=lazy koala
+human=naked monkey
