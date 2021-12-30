@@ -41,6 +41,8 @@ function setup() {
       }
     })
 
+    document.getElementById("input-field").focus();
+
     noLoop();
 }
 
@@ -61,7 +63,6 @@ function draw() {
     }
 
     select("#input-field").position(width/2 + shakeOffsetX, height/2 + shakeOffsetY);
-
 
     push();
     translate(width/2, height/2)
@@ -107,6 +108,11 @@ function draw() {
     // }
 
     pop();
+}
+
+function mouseReleased() {
+
+    document.getElementById("input-field").focus();
 }
 
 function keyPressed() {
