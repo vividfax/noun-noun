@@ -43,7 +43,7 @@ function setup() {
 
     document.getElementById("input-field").focus();
 
-    select("#discord-button").hide();
+    // select("#discord-button").hide();
 
     noLoop();
 }
@@ -76,13 +76,13 @@ function draw() {
     if (finished) {
         textSize(100);
         fill("#fff");
-        text("Your score is " + score + "/" + index, 0, -70);
+        text("Your score is " + score + "/" + index, 0, 0);
         textSize(25);
-        text("(P.S. Got any suggestions? Join our discord!)\n", 0, 50);
+        // text("(P.S. Got any suggestions? Join our discord!)\n", 0, 50);
         select("#submit-button").hide();
         select("#skip-button").hide();
         select("#input-field").hide();
-        select("#discord-button").show();
+        // select("#discord-button").show();
         pop();
         return;
     }
